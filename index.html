@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>Neighborhood-map</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel=stylesheet type=text/css href="css/bootstrap.min.css">
+   <link rel=stylesheet type=text/css href="css/styles.css">
+   <script src="js/jquery-slim.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/jquery-3.3.1.min.js"></script>
+ </head>
+ <body>
+   <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <a class="navbar-brand" href="index.html">Neighborhood App</a>
+
+     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+       <ul class="navbar-nav mr-auto">
+         <li class="nav-item active">
+           <a class="btn btn-primary" href="index.html">Home <span class="sr-only">(current)</span></a>
+         </li>
+       <li class="nav-item active">
+        <input id="text-locations" type="text" class="form-control" placeholder="Filter locations" data-bind="textInput: filterInput">
+       </li>
+       </ul>
+     </div>
+   </nav>
+
+   <div class="container-fluid text-center">
+     <div class="row content">
+       <div class="col-sm-3 sidenav" data-bind="foreach: filterLocation">
+         <p><span data-bind="click: $parent.showLocation, text: title"></span></p>
+       </div>
+       <div id="map-container" class="col-sm-9 text-left">
+   	  <div id="map"></div>
+       </div>
+     </div>
+   </div>
+
+   <script src="js/lib/knockout-3.4.2.js"></script>
+   <script src="js/app.js"></script>
+   <script async defer
+     src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB1u72gaiedP_xQWNIsARr-QhI2IGsMKMo&callback=initMap">
+   </script>
+ </body>
+</html>
